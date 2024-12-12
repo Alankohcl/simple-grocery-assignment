@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Super Grocery Store</title>
+
+        <link rel="stylesheet"  href="cssstyling.css" />
+        <link rel="shortcut icon" href="images/fav-icon.png" />
+
+        <!-- Icon -->
+        <script src="https://kit.fontawesome.com/c345ce6fbd.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+        <!-- Font -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+        <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    </head>
+
+    <body>
+        <nav class="navigation">
+            <a href="#" class="logo">
+                <span>Super</span>Grocery
+            </a>
+
+            <ul class="menu">
+                <li><a href="#" class="active">Home</a></li>
+                <li><a href="#">Categories</a></li>
+                <li><a href="#">Packages</a></li>
+            </ul>
+
+            <div class="right-nav">
+
+                <a href="#" class="cart">
+                    <i class="fas fa-cart-shopping"></i>
+                    <span>0</span>
+                </a>
+            </div>
+
+            <div class="icons">
+                <button id="registerBtn"><i class="fa-solid fa-user"></i>User Information</button>
+                <button id="loginBtn">Login</button>
+            </div>
+            
+        </nav>
+
+        <div class="content">
+            <section id="search-banner">
+                <img src="your-bg-image-1.jpg" class="bg-1" alt="bg">
+                <img src="your-bg-image-2.jpg" class="bg-2" alt="bg">
+
+                <div class="search-banner-text">
+                    <h1>Order Your Groceries</h1>
+                    <strong class="highlight-text">#FREE DELIVERY</strong>
+                    
+                    <form action="" class="search-box">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                        <input type="text" class="search-input" placeholder="Search" name="Search">
+                        <input type="submit" class="search-btn" value="Search">
+                    </form>
+                </div>
+            </section>
+            
+            
+            <section>
+                <h2>Available Products for Today</h2>
+                <div class="product">
+                    <img src="https://cdn.mos.cms.futurecdn.net/xitwmACLihFxPFBLYh2JJH.jpg" alt="Product 1">
+                    <h3>Tomato</h3>
+                    <p>Daily Fresh Tomato from Cameron Highlands(RM 4/kg)</p>
+                </div>
+                <div class="product">
+                    <img src="https://gardenerspath.com/wp-content/uploads/2021/05/Types-of-Cucumbers-FB.jpg" alt="Product 2">
+                    <h3>Cucumber</h3>
+                    <p>American Cucumber (RM6/kg)</p>
+                </div>
+                <div class="product">
+                    <img src="https://greenvegetableseeds.com/wp-content/uploads/2016/01/Carrot-Romance-F1-www.greenvegetableseeds.com_.jpg" alt="Product 2">
+                    <h3>Carrot</h3>
+                    <p>Local Carrot (RM3/kg)</p>
+                </div>
+                <div class="product">
+                    <img src="https://www.thebalancesmb.com/thmb/VlYYqfkZnom95xa11yvPjIjIrYU=/950x0/FruitVegSales6-56a82f573df78cf7729cde22.JPG" alt="Product 2">
+                    <h3>Apple</h3>
+                    <p>Local Carrot (RM3/kg)</p>
+                </div>
+            </section>
+
+            <section>
+                <h2>Add Product into Database</h2>
+                    <div class="addItemForm">
+                        <form action="items.php" method="post">
+                            <label for="itemImage">Item Image:</label>
+                            <input type="url" name="item_image" id="imageId" required pattern="https?://.+">
+
+                            <label for="itemName">Item Name:</label>
+                            <input type="text" name="item_name" required>
+
+                            <label for="itemPrice">Item Price:</label>
+                            <input type="number" name="item_price" required>
+
+                            <label for="category">Category:</label>
+                            <select id="itemCategory" name="item_category">
+                                <option value="vegetables">Vegetables</option>
+                                <option value="fruits">Fruits</option>
+                                <option vlaue="beverages">Beverages</option>
+                            </select>
+
+                            <button type="submit" name="submit" value="Add Product">Add Product</button>
+                        </form>
+                    </div>
+            </section>
+
+            <div id="myModalReg" class="modal">
+                <div class="modal-content" id="modalContent">
+                    <span class="close" id="closeModalRegBtn">&times;</span>
+                    <div class="register-form">
+                        <form method="POST" action="registration.php">
+                            <div class="form-group">
+                                <label>Username: </label><br>
+                                <input type="text" id="username" name="username" placeholder="name" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Email Address:</label><br>
+                                <input type="email" id="email" name="email" placeholder="abcd1234@gmail.com" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Phone Number: </label><br>
+                                <input type="text" id="phonenumber" name="phonenumber" placeholder="01234567890" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Gender</label><br>
+                                <input type="radio" name="gender" value="male">Male
+                                <input type="radio" name="gender" value="female">Female
+                            </div>
+                            <div class="form-group">
+                                <button type="submit" name="submit">Submit</button>
+                                <button type="reset" name="reset">Clear Form</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <div id="myModalLogin" class="modal">
+                <div class="modal-content" id="modalContentLog">
+                    <span class="close" id="closeModalLogBtn">&times;</span>
+                    <div class="register-form">
+                        <form method="POST" action="login.php">
+                            <div class="form-group">
+                                <label>Email Address:</label><br>
+                                <input type="email" id="email" name="email" placeholder="abcd1234@gmail.com" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Password: </label><br>
+                                <input type="password" id="password" name="password" required>
+                            </div>
+                            <div class="form-group">
+                                <button type="submit" name="submit">Submit</button>
+                                <button type="reset" name="reset">Clear</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <section class="displayTable">
+                <label for="tableSelector">Display a Table:</label>
+                <button id="itemsBtn" onclick="loadTableDataItems()" value="items">Items</button>
+                <button id="regBtn" onclick="loadTableDataReg()" value="registration">Users</button>
+                <div id="tableContainer" class="tableContainer">
+                </div>
+            </section>
+        </div>
+        <script src = "script.js"></script>
+    </body>
+</html>
+
+

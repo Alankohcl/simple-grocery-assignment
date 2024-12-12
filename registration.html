@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <!-- <head>
+        <title>Grocery Online System</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head> -->
+    <body>
+        <div class="container">
+            <div class="register-form">
+                <form method="POST" action="registration.php">
+                    <div class="form-group">
+                        <label>Username: </label><br>
+                        <input type="text" id="username" name="username" placeholder="name" required>
+                        <!-- <span class="error"><?php echo $usernameerror; ?></span> -->
+                    </div>
+                    <div class="form-group">
+                        <label>Email Addresss:</label><br>
+                        <input type="email" id="email" name="email" placeholder="abcd1234@gmail.com" required>
+                        <!-- <span class="error"><?php echo $emailerror; ?></span> -->
+                    </div>
+                    <div class="form-group">
+                        <label>Phone Number: </label><br>
+                        <input type="text" id="phonenumber" name="phonenumber" placeholder="01234567890" required>
+                        <!-- <span class="error"><?php echo $phonenumbererror; ?></span> -->
+                    </div>
+                    <div class="form-group">
+                        <label>Gender</label><br>
+                        <input type="radio" name="gender" value="male">Male
+                        <input type="radio" name="gender" value="female">Female
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" name="submit">Submit</button>
+                        <button type="reset" name="reset">Clear Form</button>
+                    </div>
+                    <!-- <span class="error"><?= $generalerror; ?></span> -->
+                    <!-- <span class="noerror"><?= $noError; ?></span> -->
+                </form>
+            </div>
+    </body>
+</html>
